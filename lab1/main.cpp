@@ -40,8 +40,7 @@ default: cout<<"Nie ma takiej opcji"<<endl;
 getchar (); getchar ();
 system ("cls");
 
-
-
+//czy dziala
 
 
 
