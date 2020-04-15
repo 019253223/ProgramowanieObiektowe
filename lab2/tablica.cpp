@@ -5,7 +5,7 @@ using namespace std;
 
 int zapis_tablica (int rozmiar, int kolumny, int **arkusz) { //funkcja nie działa tak jak powinna i na razie wyświetlam w tej funkcji też arkusz, żeby sprawdzić czy poprawnie zapisuje - NIE
 
-fstream plik;
+ifstream plik;
 string liczba;
 
 plik.open("plik.dat");
