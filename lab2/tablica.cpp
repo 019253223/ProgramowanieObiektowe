@@ -16,8 +16,6 @@ int zapis_tablica (int ilosc_wierszy, int ilosc_kolumn, int **arkusz) { //funkcj
 		   getline(plik,liczba);
 		   plik >> ilosc_kolumn; //omijam,bo w pierwszych 2 wersach jest liczba wierszy i liczba kolumn
 
- 		   int arkusz [ilosc_wierszy][ilosc_kolumn];
-
     		   while(!plik.eof()) {
 
 			getline(plik, liczba, ',');
@@ -47,6 +45,35 @@ int zapis_tablica (int ilosc_wierszy, int ilosc_kolumn, int **arkusz) { //funkcj
 		}
 return **arkusz;
 }
+
+//***********************************
+
+/* //spróbować zrobić inaczej
+
+int zapis_do_pliku (int ilosc_wierszy, int ilosc_kolumn, int **arkusz) {
+		ofstream plik;
+		string liczba;
+
+		plik.open("zapis do pliku.dat");
+
+		plik << ilosc_wierszy << endl;
+		   
+		plik << ilosc_kolumn << endl; 
+
+    		while(!plik.eof()) {
+
+			for (int i = 1; i < ilosc_wierszy; i++) {
+           		    for (int j = 1; j < ilosc_kolumn; j++) {
+
+				plik << arkusz[i][j];
+			    }
+       			 }		
+		     }		  
+		  
+		plik.close();
+}
+
+*/
 
 //***********************************
 

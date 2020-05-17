@@ -21,7 +21,7 @@ int pobierz_wybor (int wybor);
  * @return Kod błędu lub 0 w przypadku powodzenia
  */
 
-int wykonaj_wybor(int wybor, int **arkusz, int ilosc_wierszy, int ilosc_kolumn);
+int wykonaj_wybor(int wybor, int **arkusz, int *ilosc_wierszy, int *ilosc_kolumn);
 
 /* Funkcja wyświetlająca menu w nieskończonej pętli i wyświetlająca rezultat    funkcji wykonaj_wybor
  * @parametr **arkusz Tablica dwuwymiarowa, którą funkcje wykorzystują przy 			      realizacji polecenia

@@ -10,9 +10,12 @@
 
 int zapis_tablica (int ilosc_wierszy, int ilosc_kolumn, int **arkusz);
 
+int zapis_do_pliku (int ilosc_wierszy, int ilosc_kolumn, int **arkusz);
+
 /* Funkcja wyświetlająca tablicę
  * @parametr arkusz Tablica dwuwymiarowa z wpisanymi wartościami
  */
+
 
 void wyswietlanie_tablica (int **arkusz);
 
