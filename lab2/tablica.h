@@ -2,13 +2,13 @@
 #define _TABLICA_H
 
 /* Funkcja zapisująca wartości do komórek tablicy
- * @parametr rozmiar Liczba wierszy tablicy
- * @parametr kolumny Liczba kolumn tablicy
+ * @parametr ilosc_wierszy Liczba wierszy tablicy
+ * @parametr ilosc_kolumn Liczba kolumn tablicy
  * @parametr arkusz Tablica dwuwymiarowa, do której będa zapisywane wartości
  * @return arkusz Tablica z wpisanymi wartościami
  */
 
-int zapis_tablica (int rozmiar, int kolumny, int **arkusz);
+int zapis_tablica (int ilosc_wierszy, int ilosc_kolumn, int **arkusz);
 
 /* Funkcja wyświetlająca tablicę
  * @parametr arkusz Tablica dwuwymiarowa z wpisanymi wartościami
@@ -17,12 +17,22 @@ int zapis_tablica (int rozmiar, int kolumny, int **arkusz);
 void wyswietlanie_tablica (int **arkusz);
 
 /* Funkcja wpisująca wartość do wybranej komórki
- * @parametr rozmiar Liczba wierszy tablicy
- * @parametr kolumny Liczba kolumn tablicy
+ * @parametr ilosc_wierszy Liczba wierszy tablicy
+ * @parametr ilosc_kolumn Liczba kolumn tablicy
  * @parametr arkusz Tablica dwuwymiarowa, której komórkę chcemy zmienić 
  * @return arkusz Tablica z zaktualiowanymi wartościami
  */
 
-int wpisz_zawartosc (int **arkusz, int rozmiar, int kolumny);
+int ustaw_wartosc (int **arkusz, int ilosc_wierszy, int ilosc_kolumn, int wartosc);
+
+/* Funkcja zmieniająca rozmiar tablicy
+ * @parametr arkusz Tablica dwuwymiarowa
+ * @parametr ilosc_wierszy Stara liczba wierszy tablicy
+ * @parametr ilosc_kolumn Stara liczba kolumn tablicy
+ * @parametr nowe_wiersze Nowa liczba wierszy
+ * @parametr nowe_kolumny Nowa liczna kolumn
+ */
+
+int zmien_rozmiar (int **arkusz, int ilosc_wierszy, int ilosc_kolumn, int nowe_wiersze, int nowe_kolumny);
 
 #endif

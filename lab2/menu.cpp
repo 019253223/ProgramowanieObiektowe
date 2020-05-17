@@ -28,24 +28,26 @@ int pobierz_wybor (int wybor) {
 
 //********************************
 
-int wykonaj_wybor(int wybor, int **arkusz, int rozmiar, int kolumny) {
-
+int wykonaj_wybor(int wybor, int **arkusz, int ilosc_wierszy, int ilosc_kolumn) {
+		int wartosc;
 		wybor = pobierz_wybor(wybor);
 
 		switch (wybor) {
-			case 1:                                 //Uzupelnij caly arkusz
-        			zapis_tablica (rozmiar,kolumny,arkusz);
+			case 1: 		//Uzupelnij caly arkusz
+        			zapis_tablica (ilosc_wierszy,ilosc_kolumn,arkusz);
     			break;
-			case 2: //Wyswietl caly arkusz
+			case 2: 		//Wyswietl caly arkusz
 				wyswietlanie_tablica (arkusz);
     			break;
-			case 3: //Wystwietl zawartosc komorki
+			case 3: 		//Wystwietl zawartosc komorki
    			break;
-			case 4: //Wpisz wartosc do komorki
+			case 4: 		//Wpisz wartosc do komorki
+				cin >> wartosc;
+				ustaw_wartosc (arkusz,ilosc_wierszy,ilosc_kolumn,wartosc);
    			break;
-			case 5: //Usun wartosc w komorce
+			case 5: 		//Usun wartosc w komorce
     			break;
-			case 6: //Zamiana komorek miejscami
+			case 6: 		//Zamiana komorek miejscami
     			break;
 			case 7: exit(0);
     			break;
@@ -57,12 +59,12 @@ return 0;
 
 //*********************************
 
-void petla_menu(int **arkusz, int wybor, int rozmiar, int kolumny){
+void petla_menu(int **arkusz, int wybor, int ilosc_wierszy, int ilosc_kolumn){
 
 		for(;;) {
 
 		   drukuj_menu();
-		   wykonaj_wybor(wybor, arkusz,rozmiar, kolumny);
+		   wykonaj_wybor(wybor, arkusz,ilosc_wierszy, ilosc_kolumn);
 
 		}
 
