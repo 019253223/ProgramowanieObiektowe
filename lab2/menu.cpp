@@ -40,6 +40,7 @@ int wykonaj_wybor(int wybor, int **arkusz, int ilosc_wierszy, int ilosc_kolumn) 
 				wyswietlanie_tablica (arkusz);
     			break;
 			case 3: 		//Wystwietl zawartosc komorki
+
    			break;
 			case 4: 		//Wpisz wartosc do komorki
 				cin >> wartosc;

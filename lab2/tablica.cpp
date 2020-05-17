@@ -48,8 +48,7 @@ return **arkusz;
 
 //***********************************
 
-/* //spróbować zrobić inaczej
-
+/*
 int zapis_do_pliku (int ilosc_wierszy, int ilosc_kolumn, int **arkusz) {
 		ofstream plik;
 		string liczba;
@@ -60,15 +59,17 @@ int zapis_do_pliku (int ilosc_wierszy, int ilosc_kolumn, int **arkusz) {
 		   
 		plik << ilosc_kolumn << endl; 
 
-    		while(!plik.eof()) {
+    		
 
-			for (int i = 1; i < ilosc_wierszy; i++) {
-           		    for (int j = 1; j < ilosc_kolumn; j++) {
+		for (int i = 1; i < ilosc_wierszy; i++) {
+           	     for (int j = 1; j < ilosc_kolumn; j++) {
 
-				plik << arkusz[i][j];
-			    }
-       			 }		
-		     }		  
+			  plik << arkusz[i][j];
+			  plik << ",";
+		     }
+		     plik << endl;
+       		}		
+		     		  
 		  
 		plik.close();
 }
