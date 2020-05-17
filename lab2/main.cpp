@@ -18,8 +18,8 @@ int main () {
 	}
 
 	 
-    cout << "zarezerwowano: " << ilosc_wierszy << endl;
-	cout<< "sizeof: " << sizeof(arkusz) << endl;
+    	/* cout << "zarezerwowano: " << ilosc_wierszy << endl;
+	cout<< "sizeof: " << sizeof(arkusz) << endl; */
 
 	petla_menu(arkusz, wybor, ilosc_wierszy, ilosc_kolumn);
 	
