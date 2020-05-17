@@ -5,45 +5,51 @@ using namespace std;
 
 int zapis_tablica (int rozmiar, int kolumny, int **arkusz) { //funkcja nie działa tak jak powinna i na razie wyświetlam w tej funkcji też arkusz, żeby sprawdzić czy poprawnie zapisuje - NIE
 
-ifstream plik;
-string liczba;
+		ifstream plik;
+		string liczba;
 
-plik.open("plik.dat");
-if(plik.good() == true) {
-plik >> rozmiar;
-getline(plik,liczba);
-plik >> kolumny;
- //omijam,bo w pierwszych 2 wersach jest liczba wierszy i liczba kolumn
+		plik.open("plik.dat");
 
- int arkusz [rozmiar][kolumny];
-    while(!plik.eof()){
+		if(plik.good() == true) {
 
-    getline(plik, liczba, ',');
+		   plik >> rozmiar;
+		   getline(plik,liczba);
+		   plik >> kolumny; //omijam,bo w pierwszych 2 wersach jest liczba wierszy i liczba kolumn
 
-        for (int i = 1; i < rozmiar; i++){
-            for (int j = 1; j < kolumny; j++)
-                plik >> arkusz[i][j];
-        }
+ 		   int arkusz [rozmiar][kolumny];
 
-	for(int i = 1; i < rozmiar; i++){
-            for(int j = 1; j < kolumny; j++)
-            cout << arkusz[i][j] << " ";
+    		   while(!plik.eof()) {
 
-        }
+			getline(plik, liczba, ',');
 
-      cout<<endl;
+			for (int i = 1; i < rozmiar; i++) {
+           		    for (int j = 1; j < kolumny; j++) {
+
+				plik >> arkusz[i][j];
+			    }
+       			 }
+
+			for(int i = 1; i < rozmiar; i++) {
+            		   for(int j = 1; j < kolumny; j++) {
+
+				cout << arkusz[i][j] << " ";
+			   }
+
+        		}
+
+			cout<<endl;
 
         
-     }
+		    }
 
-plik.close();
+		   plik.close();
 
-}
+		}
 }
 
 //***********************************
 
-void wyswietlanie_tablica (int **arkusz){
+void wyswietlanie_tablica (int **arkusz) {
 //cout
 }
 

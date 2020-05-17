@@ -5,7 +5,7 @@ using namespace std;
 
 void drukuj_menu() {
 
-	cout << "Co chcesz zrobic?"<<endl<<"Wybierz opcje z dostepnych ponizej i wpisz wybrany numer: ";
+    cout << "Co chcesz zrobic?"<<endl<<"Wybierz opcje z dostepnych ponizej i wpisz wybrany numer: ";
     cout<<endl<<endl;
     cout
     <<"1. Uzupelnij caly arkusz"<<endl
@@ -20,8 +20,8 @@ void drukuj_menu() {
 //********************************
 
 int pobierz_wybor (int wybor) {
-	cin>>wybor;
-cout<<endl<<endl;
+		cin>>wybor;
+		cout<<endl<<endl;
 
 	return wybor;
 }
@@ -30,27 +30,27 @@ cout<<endl<<endl;
 
 int wykonaj_wybor(int wybor, int **arkusz, int rozmiar, int kolumny) {
 
-wybor = pobierz_wybor(wybor);
+		wybor = pobierz_wybor(wybor);
 
-    switch (wybor) {
-	case 1:                                 //Uzupelnij caly arkusz
-        zapis_tablica (rozmiar,kolumny,arkusz);
-    break;
-	case 2: //Wyswietl caly arkusz
-	wyswietlanie_tablica (arkusz);
-    break;
-	case 3: //Wystwietl zawartosc komorki
-    break;
-	case 4: //Wpisz wartosc do komorki
-    break;
-	case 5: //Usun wartosc w komorce
-    break;
-	case 6: //Zamiana komorek miejscami
-    break;
-	case 7: exit(0);
-    break;
-	default: cout<<"Nie ma takiej opcji"<<endl<<endl;
-	}
+		switch (wybor) {
+			case 1:                                 //Uzupelnij caly arkusz
+        			zapis_tablica (rozmiar,kolumny,arkusz);
+    			break;
+			case 2: //Wyswietl caly arkusz
+				wyswietlanie_tablica (arkusz);
+    			break;
+			case 3: //Wystwietl zawartosc komorki
+   			break;
+			case 4: //Wpisz wartosc do komorki
+   			break;
+			case 5: //Usun wartosc w komorce
+    			break;
+			case 6: //Zamiana komorek miejscami
+    			break;
+			case 7: exit(0);
+    			break;
+			default: cout<<"Nie ma takiej opcji"<<endl<<endl;
+		}
 
 return 0;	
 }
@@ -59,9 +59,11 @@ return 0;
 
 void petla_menu(int **arkusz, int wybor, int rozmiar, int kolumny){
 
-for(;;){
-drukuj_menu();
-wykonaj_wybor(wybor, arkusz,rozmiar, kolumny);
-}
+		for(;;) {
+
+		   drukuj_menu();
+		   wykonaj_wybor(wybor, arkusz,rozmiar, kolumny);
+
+		}
 
 }
