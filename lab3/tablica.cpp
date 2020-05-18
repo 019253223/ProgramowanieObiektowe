@@ -3,8 +3,7 @@
 using namespace std;
 #include"tablica.h"
 
-
-int zapis_tablica (Tablica *arr) { //funkcja nie działa tak jak powinna i na razie wyświetlam w tej funkcji też arkusz, żeby sprawdzić czy poprawnie zapisuje - nadal nie
+int zapis_tablica (Tablica *arr) { //funkcja nie działa tak jak powinna i na razie wyświetlam w tej funkcji też arkusz, żeby sprawdzić czy poprawnie zapisuje - nadal nie 
 
 		ifstream plik;
 		string liczba;
@@ -82,7 +81,7 @@ return 0;
 //***********************************
 
 void wyswietlanie_tablica (Tablica arr) {
-//cout
+cout << arr.arkusz;
 }
 
 //*******************************
@@ -124,3 +123,46 @@ int zmien_rozmiar (Tablica *arr, int nowe_wiersze, int nowe_kolumny) {
 
 return **arr->arkusz;
 }
+
+//**************************
+
+int suma_kolumny (Tablica arr, int ktora_kolumna) {
+
+		int suma = 0;
+		
+		if (ktora_kolumna < arr.ilosc_kolumn) {
+		    for (int i = 0; i < arr.ilosc_kolumn; i++) {
+
+			suma = suma + arr.arkusz[i][ktora_kolumna-1];
+
+		    }
+
+		    cout << "Suma wartosci komorek w kolumnie " << ktora_kolumna << " wynosi: " << suma << endl;
+		}
+
+		else cout << "Nie ma takiej kolumny" << endl;
+return 0;
+}
+
+//*************************
+int suma_wiersze (Tablica arr, int ktory_wiersz) {
+
+		int suma = 0;
+		
+		if (ktory_wiersz < arr.ilosc_wierszy) {
+		    for (int i = 0; i < arr.ilosc_wierszy; i++) {
+
+			suma = suma + arr.arkusz[ktory_wiersz-1][i];
+
+		    }
+
+		    cout << "Suma wartosci komorek w wierszu " << ktory_wiersz << " wynosi: " << suma << endl;
+		}
+
+		else cout << "Nie ma takiego wiersza" << endl;
+return 0;
+}	
+
+//*********************	
+
+

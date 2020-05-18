@@ -9,8 +9,8 @@ using namespace std;
 int main () {
 
 	Tablica arr;
-arr.ilosc_wierszy = 100;
-arr.ilosc_kolumn = 100;
+arr.ilosc_wierszy = 5;
+arr.ilosc_kolumn = 5;
 
   	int wybor;
 
@@ -22,7 +22,7 @@ arr.ilosc_kolumn = 100;
 
 	 
     	 cout << "zarezerwowano: " << arr.ilosc_wierszy << endl;
-	cout<< "sizeof: " << sizeof(arr.arkusz) << endl; 
+	 cout<< "sizeof: " << sizeof(arr.arkusz) << endl; 
 
 	petla_menu(arr, wybor); 
 	

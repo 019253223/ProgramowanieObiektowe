@@ -5,7 +5,7 @@ struct Tablica {
 	int **arkusz;
 	int ilosc_wierszy;
 	int ilosc_kolumn;
-}; 
+};
 
 /* Funkcja zapisująca wartości do komórek tablicy
  * @parametr *arr Struktura, która przechowuje tablicę dynamiczną, ilość wierszy i kolumn;
@@ -43,5 +43,21 @@ int ustaw_wartosc (Tablica arr, int wartosc);
  */
 
 int zmien_rozmiar (Tablica arr, int nowe_wiersze, int nowe_kolumny);
+
+/* Funkcja sumująca wartosci we wskazanej kolumnie
+ * @parametr arr Struktura, która przechowuje tablicę dynamiczną, ilość wierszy i kolumn;
+ * @parametr ktora_kolumna wpisany przez użytkownika numer kolumny;
+ * @return Kod błędu lub 0 w przypadku powodzenia
+ */
+
+int suma_kolumny (Tablica arr, int ktora_kolumna);
+
+/* Funkcja sumująca wartosci we wskazanym wierszu
+ * @parametr arr Struktura, która przechowuje tablicę dynamiczną, ilość wierszy i kolumn;
+ * @parametr ktory_wiersz wpisany przez użytkownika numer wiersza;
+ * @return Kod błędu lub 0 w przypadku powodzenia
+ */
+
+int suma_wiersze (Tablica arr, int ktory_wiersz);
 
 #endif

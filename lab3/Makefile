@@ -4,7 +4,7 @@ program: main.o menu.o tablica.o
 main.o: main.cpp tablica.h menu.h
 	g++ -c main.cpp
 
-menu.o: menu.cpp menu.h
+menu.o: menu.cpp menu.h tablica.h
 	g++ -c menu.cpp
 
 tablica.o: tablica.cpp tablica.h

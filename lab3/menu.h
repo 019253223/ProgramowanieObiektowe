@@ -1,6 +1,8 @@
+#include"tablica.h"
+
 #ifndef _MENU_H
 #define _MENU_H
-#include"tablica.h"
+
 
 /* Funkcja wyświetlająca menu i pytająca użytkownika, który nr wybiera
  */

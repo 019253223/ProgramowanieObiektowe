@@ -22,6 +22,8 @@ void drukuj_menu() {
     <<"12. Znajdź wartość średnią w wierszu"<<endl
     <<"13. Wyjdz z programu"<<endl<<endl
     <<"Wybieram opcje numer: "<<endl;
+
+
 }
 //********************************
 
@@ -44,7 +46,7 @@ int wykonaj_wybor (int wybor, Tablica arr) {
     			break;
 
 			case 2: 		//Wyswietl caly arkusz
-				/* wyswietlanie_tablica (arkusz); */
+				 wyswietlanie_tablica (arr); 
     			break;
 
 			case 3: 		//Wystwietl zawartosc komorki
@@ -57,9 +59,19 @@ int wykonaj_wybor (int wybor, Tablica arr) {
    			break;
 
 			case 5: 		//Sumuj według kolumn
+				int ktora_kolumna;
+
+				cout << "Ktora kolumne zsumowac?" << endl;
+				cin >> ktora_kolumna;
+				suma_kolumny (arr, ktora_kolumna);
     			break;
 
 			case 6: 		//Sumuj według wierszy
+				int ktory_wiersz;
+
+				cout << "Ktory wiersz zsumowac?" << endl;
+				cin >> ktory_wiersz;
+				suma_wiersze (arr, ktory_wiersz);
     			break;
 
 			case 7:			//Znajdź wartość największą w kolumnie
@@ -96,6 +108,7 @@ void petla_menu(Tablica arr, int wybor){
 
 		   drukuj_menu();
 		   wykonaj_wybor(wybor, arr);
+		   cout<<endl;
 
 		}
 
