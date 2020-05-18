@@ -75,15 +75,28 @@ int wykonaj_wybor (int wybor, Tablica arr) {
     			break;
 
 			case 7:			//Znajdź wartość największą w kolumnie
+				cout << "W ktorej kolumnie znalezc wartosc najwieksza?" << endl;
+				cin >> ktora_kolumna;
+				maksimum_kolumny (arr, ktora_kolumna);
 			break;
 
 			case 8: 		//Znajdź wartość największą w wierszu
+				cout << "W ktorym wierszu znalezc wartosc najwieksza?" << endl;
+				cin >> ktory_wiersz;
+				maksimum_wiersze (arr, ktory_wiersz);
     			break;
 
 			case 9: 		//Znajdź wartość najmniejszą w kolumnie
+				cout << "W ktorej kolumnie znalezc wartosc najmniejsza?" << endl;
+				cin >> ktora_kolumna;
+				minimum_kolumny (arr, ktora_kolumna);
     			break;
 
 			case 10: 		//Znajdź wartość najmniejszą w wierszu
+				cout << "W ktorym wierszu znalezc wartosc najmniejsza?" << endl;
+				cin >> ktory_wiersz;
+				minimum_wiersze (arr, ktory_wiersz);				
+				
     			break;
 
 			case 11: 		//Znajdź wartość średnią w kolumnie

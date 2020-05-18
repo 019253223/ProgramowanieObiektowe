@@ -165,4 +165,80 @@ return 0;
 
 //*********************	
 
+int maksimum_kolumny (Tablica arr, int ktora_kolumna) {
+
+		int max = arr.arkusz[0][ktora_kolumna-1];
+
+		if (ktora_kolumna < arr.ilosc_kolumn) {
+		   for (int i = 1; i < arr.ilosc_kolumn; i++) {
+			if (max < arr.arkusz[i][ktora_kolumna-1]) {
+				max = arr.arkusz[i][ktora_kolumna-1];
+			}
+		    }
+		    cout << "Maksimum w kolumnie " << ktora_kolumna << " wynosi: " << max;
+		 } 
+
+		else cout << "Nie ma takiej kolumny" << endl;  
+return 0;
+}
+
+//*********************	
+
+int maksimum_wiersze (Tablica arr, int ktory_wiersz) {
+
+		int max = arr.arkusz[ktory_wiersz-1][0];
+
+		if (ktory_wiersz < arr.ilosc_wierszy) {
+		   for (int i = 1; i < arr.ilosc_wierszy; i++) {
+			if (max < arr.arkusz[ktory_wiersz-1][i]) {
+				max = arr.arkusz[ktory_wiersz-1][i];
+			}
+		    }
+		    cout << "Maksimum w wierszu " << ktory_wiersz << " wynosi: " << max;
+		 } 
+
+		else cout << "Nie ma takiego wiersza" << endl;  
+return 0;
+}
+
+//*********************
+
+int minimum_kolumny (Tablica arr, int ktora_kolumna) {
+
+		int min = arr.arkusz[0][ktora_kolumna-1];
+
+		if (ktora_kolumna < arr.ilosc_kolumn) {
+		   for (int i = 1; i < arr.ilosc_kolumn; i++) {
+			if (min > arr.arkusz[i][ktora_kolumna-1]) {
+				min = arr.arkusz[i][ktora_kolumna-1];
+			}
+		    }
+		    cout << "Minimum w kolumnie " << ktora_kolumna << " wynosi: " << min;
+		 } 
+
+		else cout << "Nie ma takiej kolumny" << endl;  
+return 0;
+}
+
+//********************	
+
+int minimum_wiersze (Tablica arr, int ktory_wiersz) {
+
+		int min = arr.arkusz[ktory_wiersz-1][0];
+
+		if (ktory_wiersz < arr.ilosc_wierszy) {
+		   for (int i = 1; i < arr.ilosc_wierszy; i++) {
+			if (min > arr.arkusz[ktory_wiersz-1][i]) {
+				min = arr.arkusz[ktory_wiersz-1][i];
+			}
+		    }
+		    cout << "Minimum w wierszu " << ktory_wiersz << " wynosi: " << min;
+		 } 
+
+		else cout << "Nie ma takiego wiersza" << endl;  
+return 0;
+}
+
+//*********************
+
 

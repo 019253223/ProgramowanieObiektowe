@@ -60,4 +60,36 @@ int suma_kolumny (Tablica arr, int ktora_kolumna);
 
 int suma_wiersze (Tablica arr, int ktory_wiersz);
 
+/* Funkcja znajdująca maksimum we wskazanej kolumnie
+ * @parametr arr Struktura, która przechowuje tablicę dynamiczną, ilość wierszy i kolumn;
+ * @parametr ktora_kolumna wpisany przez użytkownika numer kolumny;
+ * @return Kod błędu lub 0 w przypadku powodzenia
+ */
+
+int maksimum_kolumny (Tablica arr, int ktora_kolumna);
+
+/* Funkcja znajdująca maksimum we wskazanym wierszu
+ * @parametr arr Struktura, która przechowuje tablicę dynamiczną, ilość wierszy i kolumn;
+ * @parametr ktory_wiersz wpisany przez użytkownika numer wiersza;
+ * @return Kod błędu lub 0 w przypadku powodzenia
+ */
+
+int maksimum_wiersze (Tablica arr, int ktory_wiersz);
+
+/* Funkcja znajdująca minimum we wskazanej kolumnie
+ * @parametr arr Struktura, która przechowuje tablicę dynamiczną, ilość wierszy i kolumn;
+ * @parametr ktora_kolumna wpisany przez użytkownika numer kolumny;
+ * @return Kod błędu lub 0 w przypadku powodzenia
+ */
+
+int minimum_kolumny (Tablica arr, int ktora_kolumna);
+
+/* Funkcja znajdująca minimum we wskazanym wierszu
+ * @parametr arr Struktura, która przechowuje tablicę dynamiczną, ilość wierszy i kolumn;
+ * @parametr ktory_wiersz wpisany przez użytkownika numer wiersza;
+ * @return Kod błędu lub 0 w przypadku powodzenia
+ */
+
+int minimum_wiersze (Tablica arr, int ktory_wiersz);
+
 #endif
