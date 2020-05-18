@@ -241,4 +241,36 @@ return 0;
 
 //*********************
 
+int srednia_kolumny (Tablica arr, int ktora_kolumna) {
+		    
+		    float srednia = 0;
 
+		    if (ktora_kolumna < arr.ilosc_kolumn) {
+
+			for (int i =0; i < arr.ilosc_kolumn; i++) {
+
+			    srednia = srednia + arr.arkusz[i][ktora_kolumna-1];
+			}
+		    srednia = srednia/arr.ilosc_kolumn;
+		    cout << "Srednia wartosc w kolumnie " << ktora_kolumna << " wynosi: " << srednia;
+		    }
+return 0;
+}
+
+//*********************
+
+int srednia_wiersze (Tablica arr, int ktory_wiersz) {
+		    
+		    float srednia = 0;
+
+		    if (ktory_wiersz < arr.ilosc_wierszy) {
+
+			for (int i =0; i < arr.ilosc_wierszy; i++) {
+
+			    srednia = srednia + arr.arkusz[ktory_wiersz-1][i];
+			}
+		    srednia = srednia/arr.ilosc_wierszy;
+		    cout << "Srednia wartosc w kolumnie " << ktory_wiersz << " wynosi: " << srednia;
+		    }
+return 0;
+}

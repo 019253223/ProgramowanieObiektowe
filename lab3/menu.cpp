@@ -54,8 +54,7 @@ int wykonaj_wybor (int wybor, Tablica arr) {
    			break;
 
 			case 4: 		//Wpisz wartosc do komorki
-			/*	cin >> wartosc;
-				ustaw_wartosc (arkusz,ilosc_wierszy,ilosc_kolumn,wartosc); */
+		
    			break;
 
 			case 5: 		//Sumuj według kolumn
@@ -100,9 +99,16 @@ int wykonaj_wybor (int wybor, Tablica arr) {
     			break;
 
 			case 11: 		//Znajdź wartość średnią w kolumnie
+				cout << "Dla ktorej kolumny obliczyc wartosc srednia?" << endl;
+				cin >> ktora_kolumna;
+				srednia_kolumny (arr, ktora_kolumna);
+
     			break;
 
 			case 12: 		//Znajdź wartość średnią w wierszu
+				cout << "Dla ktorego wiersza obliczyc wartosc srednia?" << endl;
+				cin >> ktory_wiersz;
+				srednia_wiersze (arr, ktory_wiersz);
     			break;
 
 			case 13: exit(0);

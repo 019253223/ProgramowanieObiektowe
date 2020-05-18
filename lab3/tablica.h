@@ -92,4 +92,20 @@ int minimum_kolumny (Tablica arr, int ktora_kolumna);
 
 int minimum_wiersze (Tablica arr, int ktory_wiersz);
 
+/* Funkcja licząca średnią we wskazanej kolumnie
+ * @parametr arr Struktura, która przechowuje tablicę dynamiczną, ilość wierszy i kolumn;
+ * @parametr ktora_kolumna wpisany przez użytkownika numer kolumny;
+ * @return Kod błędu lub 0 w przypadku powodzenia
+ */
+
+int srednia_kolumny (Tablica arr, int ktora_kolumna);
+
+/* Funkcja licząca średnią we wskazanym wierszu
+ * @parametr arr Struktura, która przechowuje tablicę dynamiczną, ilość wierszy i kolumn;
+ * @parametr ktory_wiersz wpisany przez użytkownika numer wiersza;
+ * @return Kod błędu lub 0 w przypadku powodzenia
+ */
+
+int srednia_wiersze (Tablica arr, int ktory_wiersz);
+
 #endif
