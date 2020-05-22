@@ -9,8 +9,8 @@ using namespace std;
 int main () {
 
 	Tablica arr;
-arr.ilosc_wierszy = 5;
-arr.ilosc_kolumn = 5;
+	arr.ilosc_wierszy = 5;
+	arr.ilosc_kolumn = 5;
 
   	int wybor;
 
