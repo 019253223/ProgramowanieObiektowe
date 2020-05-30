@@ -44,6 +44,7 @@ int wykonaj_wybor (int wybor, Tablica *tab) {
 		switch (wybor) {
 			case 1: 		//Uzupelnij caly arkusz
         			 tab->zapis_tablica (); 
+tab->zapis_do_pliku();
     			break;
 
 			case 2: 		//Wyswietl caly arkusz
@@ -59,17 +60,23 @@ int wykonaj_wybor (int wybor, Tablica *tab) {
 				cin >> nowe_kolumny;
 				cout << endl;
 
-				tab->zmien_rozmiar (nowe_wiersze,nowe_kolumny); 
+				tab->zmien_rozmiar(nowe_wiersze,nowe_kolumny); 
     			break;
 
 			case 4: 		//Wystwietl zawartosc komorki
-
+				int ktory_wiersz;
+				int ktora_kolumna;
+				cout << "Którą komórkę chcesz wyświetlić? Podaj numer wiersza: ";
+				cin >> ktory_wiersz;
+				cout << endl << "Podaj numer kolumny: ";
+				cin >> ktora_kolumna;				
+				tab->wyswietl_komorke(ktory_wiersz, ktora_kolumna);
+				cout << endl;
    			break;
 
 			case 5: 		//Wpisz wartosc do komorki
 				int wartosc;
-				int ktory_wiersz;
-				int ktora_kolumna;
+
 				cout << "O ktora komorke chodzi? Podaj numer wiersza: ";
 				cin >> ktory_wiersz;
 				cout << endl << "Podaj numer kolumny: ";
@@ -81,25 +88,24 @@ int wykonaj_wybor (int wybor, Tablica *tab) {
    			break;
 
 			case 6: 		//Sumuj według kolumn
-				//int ktora_kolumna;
-
+				
 				cout << "Ktora kolumne zsumowac?" << endl;
 				cin >> ktora_kolumna;
-				tab->suma_kolumny (ktora_kolumna);
+				tab->suma_kolumny(ktora_kolumna);
+
     			break;
 
 			case 7: 		//Sumuj według wierszy
-				//int ktory_wiersz;
-
+				
 				cout << "Ktory wiersz zsumowac?" << endl;
 				cin >> ktory_wiersz;
-				tab->suma_wiersze (ktory_wiersz);
+				tab->suma_wiersze(ktory_wiersz);
     			break;
 
 			case 8:			//Znajdź wartość największą w kolumnie
 				cout << "W ktorej kolumnie znalezc wartosc najwieksza?" << endl;
 				cin >> ktora_kolumna;
-				tab->maksimum_kolumny (ktora_kolumna);
+				tab->maksimum_kolumny(ktora_kolumna);
 			break;
 
 			case 9: 		//Znajdź wartość największą w wierszu
@@ -111,7 +117,7 @@ int wykonaj_wybor (int wybor, Tablica *tab) {
 			case 10: 		//Znajdź wartość najmniejszą w kolumnie
 				cout << "W ktorej kolumnie znalezc wartosc najmniejsza?" << endl;
 				cin >> ktora_kolumna;
-				tab->minimum_kolumny (ktora_kolumna);
+				tab->minimum_kolumny(ktora_kolumna);
     			break;
 
 			case 11: 		//Znajdź wartość najmniejszą w wierszu
@@ -124,14 +130,14 @@ int wykonaj_wybor (int wybor, Tablica *tab) {
 			case 12: 		//Znajdź wartość średnią w kolumnie
 				cout << "Dla ktorej kolumny obliczyc wartosc srednia?" << endl;
 				cin >> ktora_kolumna;
-				tab->srednia_kolumny (ktora_kolumna);
+				tab->srednia_kolumny(ktora_kolumna);
 
     			break;
 
 			case 13: 		//Znajdź wartość średnią w wierszu
 				cout << "Dla ktorego wiersza obliczyc wartosc srednia?" << endl;
 				cin >> ktory_wiersz;
-				tab->srednia_wiersze (ktory_wiersz);
+				tab->srednia_wiersze(ktory_wiersz);
     			break;
 
 			case 14: exit(0);

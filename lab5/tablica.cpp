@@ -29,6 +29,7 @@ int Tablica::zapis_tablica () {
 		plik.open("plik.dat");
 
 		if(plik.good() == true) {
+
 		   getline(plik,liczba, '\n');
 		   ilosc_wierszy = stoi(liczba);
 		   getline(plik,liczba, '\n');
@@ -44,37 +45,34 @@ int Tablica::zapis_tablica () {
 
     		   while(!plik.eof()) {
 
-			getline(plik, liczba, ',');
+			
 
 			for (int i = 0; i < ilosc_wierszy; i++) {
+
            		    for (int j = 0; j < ilosc_kolumn; j++) {
-					
+					getline(plik, liczba, ',');
 					arr[i][j] = stoi(liczba);
-				
 			    }
        			 }
-
-        
 		    }
 
 		   plik.close();
-
 		}
 
 
-//funkcja nie działa
+//funkcja nie działa poprawnie
 
 return **arr;   
 }
 
 //***********************************
 
-/*
+
 int Tablica::zapis_do_pliku () {
 		ofstream plik;
 		string liczba;
 
-		plik.open("zapis do pliku.dat");
+		plik.open("zapis_do_pliku.dat");
 
 		plik << ilosc_wierszy << endl;
 		   
@@ -82,21 +80,21 @@ int Tablica::zapis_do_pliku () {
 
     		
 
-		for (int i = 1; i < ilosc_wierszy; i++) {
-           	     for (int j = 1; j < ilosc_kolumn; j++) {
+		for (int i = 0; i < ilosc_wierszy; i++) {
+           	     for (int j = 0; j < ilosc_kolumn; j++) {
 
 			  plik << arr[i][j];
 			  plik << ",";
 		     }
 		     plik << endl;
        		}		
-		     		  
-		  
+		     		  		  
 		plik.close();
+//działa 
 return 0;
 }
 
-*/
+
 
 //***********************************
 
@@ -104,8 +102,9 @@ void Tablica::wyswietlanie_tablica () {
 
 	 for (int i = 0; i < ilosc_wierszy; i++) {
 		for (int j = 0; j < ilosc_kolumn; j++) {
-			cout << arr[i][j];
+			cout << arr[i][j] << " ";
 		}
+
 		cout<<endl;
 	 }
 } 
@@ -119,7 +118,7 @@ int Tablica::ustaw_wartosc (int wartosc, int ktory_wiersz, int ktora_kolumna) {
 	else
 		arr[ktory_wiersz-1][ktora_kolumna-1] = wartosc;
 
-//funkcja działa
+//funkcja raczej działa
 
 return 0; 
 } 
@@ -129,17 +128,17 @@ int Tablica::zmien_rozmiar (int nowe_wiersze, int nowe_kolumny) {
 
 		   //rezerwacja miejsca dla nowej tablicy (nowy rozmiar)
 
-		   int ** tab = new int * [nowe_wiersze];
+		   int **nowa_tablica = new int * [nowe_wiersze];
 		   for (int i = 0; i < nowe_wiersze; i++) {
-	     		tab[i] = new int [nowe_kolumny];
+	     		nowa_tablica[i] = new int [nowe_kolumny];
 		   }
 
 		   //kopiowanie zawrtosci starej tablicy
 
 		   for (int i = 0; i < ilosc_wierszy; i++) {
-			tab[i] = arr[i];
+			nowa_tablica[i] = arr[i];
 			for (int j=0; j < ilosc_kolumn; j++) {
-			    tab[j] = arr[j];
+			    nowa_tablica[j] = arr[j];
 			}
 		   }
 				
@@ -151,11 +150,12 @@ int Tablica::zmien_rozmiar (int nowe_wiersze, int nowe_kolumny) {
 	   		 delete [] arr;
 
 		   //przestawienie wskaznika arkusz na nowe miejsce w pamieci
+		   arr = nowa_tablica;
+		   ilosc_wierszy = nowe_wiersze;
+		   ilosc_kolumn = nowe_kolumny;
+	   
 
-		   arr = tab; //jak przestawić wskaźnik
-
-
-//funkcja nie działa
+//funkcja nie działa poprawnie, poprawić przestawianie wskaźnika
 
 //return **arr; 
 }
@@ -165,18 +165,21 @@ int Tablica::zmien_rozmiar (int nowe_wiersze, int nowe_kolumny) {
 int Tablica::suma_kolumny (int ktora_kolumna) {
 
 		int suma = 0;
-		
 		if (ktora_kolumna < ilosc_kolumn) {
+		
+		
 		    for (int i = 0; i < ilosc_kolumn; i++) {
 
 			suma = suma + arr[i][ktora_kolumna-1];
 
 		    }
+				
+		cout << "Suma wartosci komorek w kolumnie " << ktora_kolumna << " wynosi: " << suma << endl;
 
-		    cout << "Suma wartosci komorek w kolumnie " << ktora_kolumna << " wynosi: " << suma << endl;
 		}
 
 		else cout << "Nie ma takiej kolumny" << endl;
+		    
 return 0;
 }
 
@@ -211,7 +214,7 @@ int Tablica::maksimum_kolumny (int ktora_kolumna) {
 				max = arr[i][ktora_kolumna-1];
 			}
 		    }
-		    cout << "Maksimum w kolumnie " << ktora_kolumna << " wynosi: " << max;
+		    cout << "Maksimum w kolumnie " << ktora_kolumna << " wynosi: " << max << endl;
 		 } 
 
 		else cout << "Nie ma takiej kolumny" << endl;  
@@ -230,7 +233,7 @@ int Tablica::maksimum_wiersze (int ktory_wiersz) {
 				max = arr[ktory_wiersz-1][i];
 			}
 		    }
-		    cout << "Maksimum w wierszu " << ktory_wiersz << " wynosi: " << max;
+		    cout << "Maksimum w wierszu " << ktory_wiersz << " wynosi: " << max << endl;
 		 } 
 
 		else cout << "Nie ma takiego wiersza" << endl;  
@@ -249,7 +252,7 @@ int Tablica::minimum_kolumny (int ktora_kolumna) {
 				min = arr[i][ktora_kolumna-1];
 			}
 		    }
-		    cout << "Minimum w kolumnie " << ktora_kolumna << " wynosi: " << min;
+		    cout << "Minimum w kolumnie " << ktora_kolumna << " wynosi: " << min << endl;
 		 } 
 
 		else cout << "Nie ma takiej kolumny" << endl;  
@@ -268,7 +271,7 @@ int Tablica::minimum_wiersze (int ktory_wiersz) {
 				min = arr[ktory_wiersz-1][i];
 			}
 		    }
-		    cout << "Minimum w wierszu " << ktory_wiersz << " wynosi: " << min;
+		    cout << "Minimum w wierszu " << ktory_wiersz << " wynosi: " << min << endl;
 		 } 
 
 		else cout << "Nie ma takiego wiersza" << endl;  
@@ -288,7 +291,7 @@ int Tablica::srednia_kolumny (int ktora_kolumna) {
 			    srednia = srednia + arr[i][ktora_kolumna-1];
 			}
 		    srednia = srednia/ilosc_kolumn;
-		    cout << "Srednia wartosc w kolumnie " << ktora_kolumna << " wynosi: " << srednia;
+		    cout << "Srednia wartosc w kolumnie " << ktora_kolumna << " wynosi: " << srednia << endl;
 		    }
 return 0;
 }
@@ -306,7 +309,16 @@ int Tablica::srednia_wiersze (int ktory_wiersz) {
 			    srednia = srednia + arr[ktory_wiersz-1][i];
 			}
 		    srednia = srednia/ilosc_wierszy;
-		    cout << "Srednia wartosc w kolumnie " << ktory_wiersz << " wynosi: " << srednia;
+		    cout << "Srednia wartosc w kolumnie " << ktory_wiersz << " wynosi: " << srednia << endl;
 		    }
+return 0;
+}
+
+//**************************
+
+int Tablica::wyswietl_komorke (int ktory_wiersz, int ktora_kolumna) {
+
+	cout << arr[ktory_wiersz-1][ktora_kolumna-1];
+
 return 0;
 }

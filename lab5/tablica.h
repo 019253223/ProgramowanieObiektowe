@@ -13,9 +13,6 @@ public:
 	Tablica();
 	~Tablica();
 
-int ustal_rozmiar ();
-int usun_tablice ();
-
 /* Funkcja zapisująca wartości do komórek tablicy
  */
 
@@ -102,6 +99,14 @@ int usun_tablice ();
  */
 
 	int srednia_wiersze (int ktory_wiersz);
+
+/* Funkcja wyświetlająca konkretną komórkę
+ * @parametr ktory_wiersz wpisany przez użytkownika numer wiersza;
+ * @parametr ktora_kolumna wpisany przez użytkownika numer kolumny;
+ * @return Kod błędu lub 0 w przypadku powodzenia
+ */
+
+	int wyswietl_komorke (int ktory_wiersz, int ktora_kolumna);
 };
 
 #endif
