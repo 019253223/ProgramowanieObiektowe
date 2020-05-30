@@ -147,7 +147,7 @@ int Tablica::zmien_rozmiar (int nowe_wiersze, int nowe_kolumny) {
 	     			for (int j = 0; j < nowe_kolumny; j++) {
 					nowa_tablica[i][j] = 0;
 				}
-			}  //działa wypełnia zerami
+			}  //działa, wypełnia zerami
 		   }
 		   				
 		   //zwonienie pamieci po starej tablicy (delete)

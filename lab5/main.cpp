@@ -14,7 +14,6 @@ int main () {
 
 	petla_menu(tab, wybor); 
 	
-	
 
 return 0;
 }
