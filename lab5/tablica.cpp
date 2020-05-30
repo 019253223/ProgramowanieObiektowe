@@ -30,9 +30,9 @@ int Tablica::zapis_tablica () {
 
 		if(plik.good() == true) {
 
-		   getline(plik,liczba, '\n');
+		   getline(plik,liczba);
 		   ilosc_wierszy = stoi(liczba);
-		   getline(plik,liczba, '\n');
+		   getline(plik,liczba);
 		   ilosc_kolumn = stoi(liczba); 
  
 
@@ -44,13 +44,12 @@ int Tablica::zapis_tablica () {
 		   }
 
     		   while(!plik.eof()) {
-
 			
-
 			for (int i = 0; i < ilosc_wierszy; i++) {
 
            		    for (int j = 0; j < ilosc_kolumn; j++) {
 					getline(plik, liczba, ',');
+if(liczba == "\n") getline(plik, liczba);
 					arr[i][j] = stoi(liczba);
 			    }
        			 }
@@ -134,14 +133,23 @@ int Tablica::zmien_rozmiar (int nowe_wiersze, int nowe_kolumny) {
 		   }
 
 		   //kopiowanie zawrtosci starej tablicy
-
-		   for (int i = 0; i < ilosc_wierszy; i++) {
-			nowa_tablica[i] = arr[i];
-			for (int j=0; j < ilosc_kolumn; j++) {
-			    nowa_tablica[j] = arr[j];
-			}
+		   if (nowe_wiersze <= ilosc_wierszy && nowe_kolumny <= ilosc_kolumn) {
+		   	for (int i = 0; i < ilosc_wierszy; i++) {
+				nowa_tablica[i] = arr[i];
+				for (int j=0; j < ilosc_kolumn; j++) {
+			    	nowa_tablica[i][j] = arr[i][j];
+				}
+		   	} //nie kopiuje
+		   
 		   }
-				
+		   else {
+		   	for (int i = 0; i < nowe_wiersze; i++) {
+	     			for (int j = 0; j < nowe_kolumny; j++) {
+					nowa_tablica[i][j] = 0;
+				}
+			}  //działa wypełnia zerami
+		   }
+		   				
 		   //zwonienie pamieci po starej tablicy (delete)
 
 		   for (int i = 0; i < ilosc_wierszy; i++) {
