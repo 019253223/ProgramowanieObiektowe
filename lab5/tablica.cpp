@@ -48,9 +48,8 @@ int Tablica::zapis_tablica () {
 			for (int i = 0; i < ilosc_wierszy; i++) {
 
            		    for (int j = 0; j < ilosc_kolumn; j++) {
-					getline(plik, liczba, ',');
-if(liczba == "\n") getline(plik, liczba);
-					arr[i][j] = stoi(liczba);
+				getline(plik, liczba, ',');
+				arr[i][j] = stoi(liczba);
 			    }
        			 }
 		    }
