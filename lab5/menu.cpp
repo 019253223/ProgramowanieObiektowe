@@ -21,7 +21,8 @@ void drukuj_menu() {
     <<"11. Znajdź wartość najmniejszą w wierszu"<<endl
     <<"12. Znajdź wartość średnią w kolumnie"<<endl
     <<"13. Znajdź wartość średnią w wierszu"<<endl
-    <<"14. Wyjdz z programu"<<endl<<endl
+    <<"14. Zapisz arkusz do pliku"<<endl
+    <<"15. Wyjdz z programu"<<endl<<endl
     <<"Wybieram opcje numer: "<<endl;
 
 
@@ -44,7 +45,6 @@ int wykonaj_wybor (int wybor, Tablica *tab) {
 		switch (wybor) {
 			case 1: 		//Uzupelnij caly arkusz
         			 tab->zapis_tablica (); 
-tab->zapis_do_pliku();
     			break;
 
 			case 2: 		//Wyswietl caly arkusz
@@ -140,8 +140,14 @@ tab->zapis_do_pliku();
 				tab->srednia_wiersze(ktory_wiersz);
     			break;
 
-			case 14: exit(0);
+			case 14: 
+				tab->zapis_do_pliku();
     			break;
+
+			case 15: 
+				exit(0);
+    			break;
+
 			default: cout<<"Nie ma takiej opcji"<<endl<<endl;
 		}
 
