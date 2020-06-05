@@ -1,5 +1,6 @@
 #ifndef _TABLICA_H
 #define _TABLICA_H
+#include"komorka.h"
 
 class Tablica {
 
