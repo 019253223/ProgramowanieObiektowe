@@ -6,8 +6,10 @@
 class komorka {
 
 public:
-
-	virtual int wartosc_zwracana(string liczba) = 0;  //liczba w zapis_tablica() w tablica.cpp - getline to string
+	virtual int wartosc_wczytana(string liczba) = 0; //liczba w zapis_tablica() w tablica.cpp - getline to string
+	virtual string zwrocona_string();
+	virtual int zwrocona_int(); 
+ 
 };
 
 
@@ -17,7 +19,8 @@ private:
 	int wartosc;
 
 public:
-	int wartosc_zwracana(string liczba);
+	int wartosc_wczytana(string liczba);
+	int zwrocona_int();
 
 };
 
@@ -28,7 +31,8 @@ private:
 	string wartosc;
 
 public:
-	int wartosc_zwracana(string liczba); 
+	int wartosc_wczytana(string liczba); 
+	string zwrocona_string();
 
 };
 

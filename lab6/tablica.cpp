@@ -37,10 +37,10 @@ int Tablica::zapis_tablica () {
 		   ilosc_kolumn = stoi(liczba); 
  
 
-		   arr = new komorka* [ilosc_wierszy];
+		   arr = new int* [ilosc_wierszy];
 		   for (int i = 0; i < ilosc_wierszy; i++) {
 
-			arr[i] = new komorka [ilosc_kolumn];
+			arr[i] = new int [ilosc_kolumn];
 			
 		   }
 
@@ -49,7 +49,7 @@ int Tablica::zapis_tablica () {
 			for (int i = 0; i < ilosc_wierszy; i++) {
 
            		    for (int j = 0; j < ilosc_kolumn; j++) {
-				arr[i][j] = stoi(liczba);
+				arr[i][j] = stoi(liczba); //tutaj powinno się wykonywac wartosc_zwracana(liczba) [komorka.cpp] czyli wartosc zwracana jako int lub string???
 			    }
        			 }
 		    }
@@ -162,9 +162,8 @@ int Tablica::zmien_rozmiar (int nowe_wiersze, int nowe_kolumny) {
 		   ilosc_kolumn = nowe_kolumny;
 	   
 
-//funkcja nie działa poprawnie, poprawić przestawianie wskaźnika
-
-//return **arr; 
+//funkcja nie działa poprawnie
+ 
 }
 
 //**************************
