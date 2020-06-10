@@ -3,14 +3,14 @@ using namespace std;
 
 int komorka_int::_wartosc(string liczba) {
 
-	this->wartosc = stoi(liczba);
+	wartosc = stoi(liczba);
 
 return 0;
 }
 
 int komorka_string::_wartosc(string liczba) {
 
-	this->wartosc = liczba;
+	wartosc = liczba;
 
 return 0;
 }
