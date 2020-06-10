@@ -60,7 +60,7 @@ int Tablica::zapis_tablica () {
 
 //funkcja nie działa poprawnie
 
-return **arr;   
+//return **arr;   
 }
 
 //***********************************
