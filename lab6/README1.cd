@@ -1,5 +1,0 @@
-[10.06.2020] Trudności z tym etapem i implementacją funkcjonalności rozróżniania typów w metodach klasy tablica w tablica.cpp
-przy metodzie int Tablica::zapis_tablica () w linijce 52 powinno się to wykonywać(?) Ale brak rozwiązania.
-Mam świadomość niedotrzymania terminów. Końcówka tego zdalnego semestru też nie pozwala na to za bardzo.  
-Naprawdę próbowałam dojść do tego sama, siedziałam nad tym kilka razy, ale jednak nie byłam w stanie tego zrobić.
-Wiem, że będzie Pan musiał to niedługo oceniać, ponieważ już koniec semestru i nie chciałam, by lab6 zostały puste.
